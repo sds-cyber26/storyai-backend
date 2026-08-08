@@ -1,20 +1,13 @@
 [
   {
     "id": 1,
-    "age": 5,
-    "theme": "Friendship",
-    "title": "The Brave Little Rabbit",
-    "story": "Once upon a time there lived a brave little rabbit who helped every animal in the forest. Everyone loved him because kindness is the greatest strength."
-  },
-  {
-    "id": 2,
     "age": 6,
     "theme": "Kindness",
     "title": "The Helpful Elephant",
     "story": "A gentle elephant lived in a beautiful jungle. He always helped smaller animals and showed everyone that kindness makes the world better."
   },
   {
-    "id": 3,
+    "id": 2,
     "age": 7,
     "theme": "Adventure",
     "title": "The Magic Forest",
