@@ -5,5 +5,13 @@
     "theme": "AAA",
     "title": "The Brave Little LION",
     "story": "Once upon a time there lived a brave little LION who helped every animal in the forest."
+  },
+    {
+    "id": 2,
+    "age": 6,
+    "theme": "XXX",
+    "title": "The Brave Little TIGER",
+    "story": "Once upon a time there lived a brave little TIGER who helped every animal in the forest."
   }
+
 ]
