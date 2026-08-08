@@ -1,16 +1,61 @@
-[
-  {
-    "id": 1,
-    "age": 6,
-    "theme": "Kindness",
-    "title": "The Helpful Elephant",
-    "story": "A gentle elephant lived in a beautiful jungle. He always helped smaller animals and showed everyone that kindness makes the world better."
-  },
-  {
-    "id": 2,
-    "age": 7,
-    "theme": "Adventure",
-    "title": "The Magic Forest",
-    "story": "A young child entered a magical forest and discovered that courage, friendship, and honesty can overcome every challenge."
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
+
+const app = express();
+
+app.use(express.json());
+
+const PORT = process.env.PORT || 3000;
+
+// Home
+app.get("/", (req, res) => {
+  res.send("StoryAI Backend is Running");
+});
+
+// Story API
+app.post("/story", (req, res) => {
+  try {
+    const { theme, age, language } = req.body;
+
+    // For now we are using English stories
+    const filePath = path.join(__dirname, "stories", "english.json");
+
+    const stories = JSON.parse(
+      fs.readFileSync(filePath, "utf8")
+    );
+
+    // Find matching story
+    let selectedStory = stories.find(
+      story =>
+        story.age == age &&
+        story.theme.toLowerCase() == theme.toLowerCase()
+    );
+
+    // If exact match is not found, use first story
+    if (!selectedStory) {
+      selectedStory = stories[0];
+    }
+
+    res.json({
+      success: true,
+      title: selectedStory.title,
+      language: language || "EN",
+      age: selectedStory.age,
+      theme: selectedStory.theme,
+      story: selectedStory.story
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
   }
-]
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
