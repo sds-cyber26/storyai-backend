@@ -20,26 +20,44 @@ app.post("/story", (req, res) => {
     const age = req.body.age;
     const language = req.body.language;
 
-    // Load English stories for now
-    const filePath = path.join(__dirname, "stories", "english.json");
+    // Select story file based on language
+    let fileName;
 
+    if (language === "EN") {
+      fileName = "english.json";
+    } else if (language === "HI") {
+      fileName = "hindi.json";
+    } else if (language === "MR") {
+      fileName = "marathi.json";
+    } else {
+      fileName = "english.json";
+    }
+
+    // Build file path
+    const filePath = path.join(
+      __dirname,
+      "stories",
+      fileName
+    );
+
+    // Read stories
     const stories = JSON.parse(
       fs.readFileSync(filePath, "utf8")
     );
 
-    // Find a story matching age and theme
+    // Find matching story
     let selectedStory = stories.find(
       (story) =>
         story.age == age &&
         story.theme.toLowerCase() == theme.toLowerCase()
     );
 
-    // If no matching story is found, use the first story
+    // If exact match is not found, use first story
     if (!selectedStory) {
       selectedStory = stories[0];
     }
 
-    // Send story back to FlutterFlow
+    // Return story
     res.json({
       success: true,
       title: selectedStory.title,
