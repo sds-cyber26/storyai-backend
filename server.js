@@ -16,9 +16,7 @@ app.get("/", (req, res) => {
 // Story API
 app.post("/story", (req, res) => {
   try {
-    const theme = req.body.theme;
-    const age = req.body.age;
-    const language = req.body.language;
+    const language = req.body.language || "EN";
 
     // Select story file based on language
     let fileName;
@@ -46,16 +44,9 @@ app.post("/story", (req, res) => {
     );
 
     // Find matching story
-    let selectedStory = stories.find(
-      (story) =>
-        story.age == age &&
-        story.theme.toLowerCase() == theme.toLowerCase()
-    );
+    // Select the first story
 
-    // If exact match is not found, use first story
-    if (!selectedStory) {
-      selectedStory = stories[0];
-    }
+const selectedStory = stories[0];
 
     // Return story
   res.json({
