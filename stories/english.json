@@ -1,17 +1,40 @@
 [
   {
     "id": 1,
-    "age": 5,
-    "theme": "AAA",
-    "title": "The Brave Little LION",
-    "story": "Once upon a time there lived a brave little LION who helped every animal in the forest."
-  },
-    {
-    "id": 2,
-    "age": 6,
-    "theme": "XXX",
-    "title": "The Brave Little TIGER",
-    "story": "Once upon a time there lived a brave little TIGER who helped every animal in the forest."
+    "title": "The Brave Little Rabbit",
+    "coverImage": "",
+    "totalPages": 5,
+    "pages": [
+      {
+        "page": 1,
+        "text": "Once upon a time, in a green forest, there lived a rabbit named Raju.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 2,
+        "text": "Raju loved running among the trees and flowers every morning.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 3,
+        "text": "One day, he found a small bird that had fallen from its nest.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 4,
+        "text": "Raju carefully helped the bird return safely to its home.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 5,
+        "text": "From that day on, all the animals called Raju the bravest rabbit in the forest.",
+        "imageUrl": "",
+        "audioUrl": ""
+      }
+    ]
   }
-
 ]
