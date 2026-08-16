@@ -58,15 +58,15 @@ app.post("/story", (req, res) => {
     }
 
     // Return story
-    res.json({
-      success: true,
-      title: selectedStory.title,
-      language: language || "EN",
-      age: selectedStory.age,
-      theme: selectedStory.theme,
-      story: selectedStory.story
-    });
-
+  res.json({
+  success: true,
+  id: selectedStory.id,
+  title: selectedStory.title,
+  language: language || "EN",
+  totalPages: selectedStory.totalPages,
+  coverImage: selectedStory.coverImage,
+  pages: selectedStory.pages
+});
   } catch (error) {
     console.error(error);
 
