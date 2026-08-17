@@ -36,5 +36,157 @@
         "audioUrl": ""
       }
     ]
+  },
+  {
+    "id": 2,
+    "title": "The Clever Fox",
+    "coverImage": "",
+    "totalPages": 5,
+    "pages": [
+      {
+        "page": 1,
+        "text": "Deep inside the forest lived a clever fox named Fifi.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 2,
+        "text": "Fifi loved solving problems for her animal friends.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 3,
+        "text": "One afternoon, the river bridge broke after a heavy storm.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 4,
+        "text": "Fifi gathered wood and helped the animals build a new bridge.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 5,
+        "text": "The forest animals celebrated Fifi's clever idea with a grand feast.",
+        "imageUrl": "",
+        "audioUrl": ""
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "The Kind Elephant",
+    "coverImage": "",
+    "totalPages": 5,
+    "pages": [
+      {
+        "page": 1,
+        "text": "An elephant named Ella lived beside a sparkling lake.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 2,
+        "text": "Ella always shared water and fruit with every animal.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 3,
+        "text": "During a hot summer, the lake began to dry up.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 4,
+        "text": "Ella used her strength to dig a new water hole for everyone.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 5,
+        "text": "The animals thanked Ella for her kindness and generosity.",
+        "imageUrl": "",
+        "audioUrl": ""
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "The Tiny Turtle",
+    "coverImage": "",
+    "totalPages": 5,
+    "pages": [
+      {
+        "page": 1,
+        "text": "A tiny turtle named Timo dreamed of exploring the ocean.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 2,
+        "text": "Every day, Timo practiced swimming near the shore.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 3,
+        "text": "One day, a strong wave carried him far from home.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 4,
+        "text": "A friendly dolphin guided Timo safely back to the beach.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 5,
+        "text": "Timo learned that courage and friendship make every journey easier.",
+        "imageUrl": "",
+        "audioUrl": ""
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "The Singing Bird",
+    "coverImage": "",
+    "totalPages": 5,
+    "pages": [
+      {
+        "page": 1,
+        "text": "Bella the bird loved singing beautiful songs every morning.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 2,
+        "text": "Her cheerful melodies filled the forest with happiness.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 3,
+        "text": "One day, Bella lost her voice and became very sad.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 4,
+        "text": "Her friends encouraged her to rest and regain her strength.",
+        "imageUrl": "",
+        "audioUrl": ""
+      },
+      {
+        "page": 5,
+        "text": "Soon Bella's songs returned, and the forest became joyful once again.",
+        "imageUrl": "",
+        "audioUrl": ""
+      }
+    ]
   }
 ]
