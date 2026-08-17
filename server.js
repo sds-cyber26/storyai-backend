@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 app.post("/story", (req, res) => {
   try {
     const language = req.body.language || "EN";
+    const storyId = req.body.storyId || 1;
 
     // Select story file based on language
     let fileName;
@@ -44,9 +45,12 @@ app.post("/story", (req, res) => {
     );
 
     // Find matching story
-    // Select the first story
+    // Select the story
 
-const selectedStory = stories[0];
+const selectedStory =
+  stories.find(
+    (story) => story.id == storyId
+  ) || stories[0];
 
     // Return story
   res.json({
