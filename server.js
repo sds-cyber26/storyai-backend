@@ -72,6 +72,46 @@ const selectedStory =
   }
 });
 
+app.post("/stories", (req, res) => {
+  try {
+    const language = req.body.language || "EN";
+
+    let fileName = "english.json";
+
+    if (language === "HI") {
+      fileName = "hindi.json";
+    }
+
+    if (language === "MR") {
+      fileName = "marathi.json";
+    }
+
+    const filePath = path.join(
+      __dirname,
+      "stories",
+      fileName
+    );
+
+    const stories = JSON.parse(
+      fs.readFileSync(filePath, "utf8")
+    );
+
+    const storyList = stories.map(
+      (story) => ({
+        id: story.id,
+        title: story.title,
+        totalPages: story.totalPages
+      })
+    );
+
+    res.json(storyList);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+});
 // Start server
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
