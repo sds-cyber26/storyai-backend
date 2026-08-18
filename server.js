@@ -100,7 +100,9 @@ app.post("/stories", (req, res) => {
       (story) => ({
         id: story.id,
         title: story.title,
-        totalPages: story.totalPages
+        totalPages: story.totalPages,
+        coverImage: story.coverImage,
+        pages: story.pages
       })
     );
 
