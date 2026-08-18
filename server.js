@@ -102,7 +102,7 @@ app.post("/stories", (req, res) => {
         title: story.title,
         totalPages: story.totalPages,
         coverImage: story.coverImage,
-        pages: story.pages
+       // pages: story.pages
       })
     );
 
