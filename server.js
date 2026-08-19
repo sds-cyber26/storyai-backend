@@ -1,12 +1,46 @@
+const compression = require("compression");
 const express = require("express");
+
 const fs = require("fs");
 const path = require("path");
 
 const app = express();
+app.use(compression());
 
 app.use(express.json());
+const storyCache = {};
 
 const PORT = process.env.PORT || 3000;
+function getStoryFile(language) {
+  switch (language) {
+    case "HI":
+      return "hindi.json";
+
+    case "MR":
+      return "marathi.json";
+
+    default:
+      return "english.json";
+  }
+}
+
+function loadStories(language) {
+  const fileName = getStoryFile(language);
+
+  const filePath = path.join(
+    __dirname,
+    "stories",
+    fileName
+  );
+
+  if (!storyCache[filePath]) {
+    storyCache[filePath] = JSON.parse(
+      fs.readFileSync(filePath, "utf8")
+    );
+  }
+
+  return storyCache[filePath];
+}
 
 // Home page
 app.get("/", (req, res) => {
@@ -20,29 +54,7 @@ app.post("/story", (req, res) => {
     const storyId = req.body.storyId || 1;
 
     // Select story file based on language
-    let fileName;
-
-    if (language === "EN") {
-      fileName = "english.json";
-    } else if (language === "HI") {
-      fileName = "hindi.json";
-    } else if (language === "MR") {
-      fileName = "marathi.json";
-    } else {
-      fileName = "english.json";
-    }
-
-    // Build file path
-    const filePath = path.join(
-      __dirname,
-      "stories",
-      fileName
-    );
-
-    // Read stories
-    const stories = JSON.parse(
-      fs.readFileSync(filePath, "utf8")
-    );
+   const stories = loadStories(language);
 
     // Find matching story
     // Select the story
@@ -76,26 +88,8 @@ app.post("/stories", (req, res) => {
   try {
     const language = req.body.language || "EN";
 
-    let fileName = "english.json";
-
-    if (language === "HI") {
-      fileName = "hindi.json";
-    }
-
-    if (language === "MR") {
-      fileName = "marathi.json";
-    }
-
-    const filePath = path.join(
-      __dirname,
-      "stories",
-      fileName
-    );
-
-    const stories = JSON.parse(
-      fs.readFileSync(filePath, "utf8")
-    );
-
+    const stories = loadStories(language);
+    
     const storyList = stories.map(
       (story) => ({
         id: story.id,
